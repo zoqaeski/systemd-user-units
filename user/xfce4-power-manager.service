@@ -1,0 +1,10 @@
+[Unit]
+Description=Xfce4 Power Manager
+
+[Service]
+BusName=org.xfce.PowerManager
+ExecStart=/usr/bin/xfce4-power-manager --no-daemon
+
+[Install]
+WantedBy=xinitrc.target
+Alias=dbus-org.xfce.PowerManager.service

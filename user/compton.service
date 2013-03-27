@@ -1,0 +1,10 @@
+[Unit]
+Description=Compton X11 compositor
+Conflicts=gnome-session.service
+
+[Service]
+Type=forking
+ExecStart=/usr/bin/compton -G -I 0.05 -O 0.05 -D 5 -b
+
+[Install]
+WantedBy=xinitrc.target

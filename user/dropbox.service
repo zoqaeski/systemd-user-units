@@ -1,0 +1,9 @@
+[Unit]
+Description=Dropbox Network Storage Daemon
+After=xorg.target
+
+[Service]
+ExecStart=/opt/dropbox/dropboxd
+
+[Install]
+WantedBy=default.target

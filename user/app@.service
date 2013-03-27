@@ -1,0 +1,13 @@
+[Unit]
+Description=Application "%i"
+After=xorg.target
+After=environment.target
+IgnoreOnIsolate=yes
+
+[Service]
+ExecStart=/usr/bin/env %i
+
+KillMode=process
+
+[Install]
+WantedBy=xinitrc.target

@@ -1,0 +1,16 @@
+[Unit]
+Description=tmux default session (detached)
+Documentation=man:tmux(1)
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/tmux new-session -d -s %H
+ExecStartPost=/usr/bin/tmux source-file %h/.config/tmux/sessions/default
+ExecStop=/usr/bin/tmux kill-session -t %H
+Environment=DISPLAY=:0
+KillMode=none
+
+[Install]
+WantedBy=multiplexer.target
+

@@ -1,0 +1,9 @@
+[Unit]
+Description=Window manager
+Wants=xorg.target
+Wants=xinitrc.target
+Requires=dbus.socket
+AllowIsolate=true
+
+[Install]
+WantedBy=default.target

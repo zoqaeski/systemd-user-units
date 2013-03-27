@@ -1,0 +1,9 @@
+[Unit]
+Description=Conky system monitor
+
+[Service]
+Type=forking
+ExecStart=/usr/bin/conky -d -c %h/.config/conky/%I.rc
+
+[Install]
+WantedBy=xinitrc.target

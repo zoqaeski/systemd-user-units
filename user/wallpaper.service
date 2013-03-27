@@ -1,0 +1,12 @@
+[Unit]
+Description=Wallpaper
+Documentation=man:feh(1)
+
+[Service]
+ExecStart=/usr/bin/feh --no-fehbg --image-bg black $BG_TYPE "$CURRENT_WALLPAPER"
+WorkingDirectory=/./%h/wallpapers
+EnvironmentFile=/./%h/.config/fehbg.conf
+
+[Install]
+WantedBy=xinitrc.target
+

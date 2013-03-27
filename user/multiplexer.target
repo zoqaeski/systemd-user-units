@@ -1,0 +1,6 @@
+[Unit]
+Description=Terminal multiplexer
+Documentation=info:screen man:screen(1) man:tmux(1)
+
+[Install]
+Alias=default.target

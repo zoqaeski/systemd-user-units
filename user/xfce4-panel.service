@@ -1,0 +1,13 @@
+[Unit]
+Description=Xfce4 Panel
+
+[Service]
+BusName=org.xfce.Panel
+ExecStart=/usr/bin/xfce4-panel
+ExecReload=/usr/bin/xfce4-panel --restart
+ExecStop=/usr/bin/xfce4-panel --quit
+
+[Install]
+Alias=dbus-org.xfce.Panel.service
+WantedBy=xinitrc.target
+

@@ -1,0 +1,12 @@
+[Unit]
+Description=X keyboard configuration
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/xkbcomp -I$XDG_CONFIG_HOME/xkb/ $XDG_CONFIG_HOME/xkb/keymap/custom.xkb $DISPLAY
+Environment=XDG_CONFIG_HOME=%h/.config
+Environment=DISPLAY=:0
+
+[Install]
+WantedBy=xinitrc.target
+

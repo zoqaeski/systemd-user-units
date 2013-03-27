@@ -1,0 +1,10 @@
+[Unit]
+Description=Wallpaper
+Documentation=man:feh(1)
+
+[Service]
+ExecStart=/usr/bin/feh --no-fehbg --image-bg black --bg-center "%h/wallpapers/%I"
+
+[Install]
+WantedBy=xinitrc.target
+
