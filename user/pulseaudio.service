@@ -4,8 +4,9 @@ Before=sound.target
 Requires=dbus.socket
 
 [Service]
+Type=forking
 BusName=org.pulseaudio.Server
-ExecStart=/usr/bin/pulseaudio --start
+ExecStart=/usr/bin/pulseaudio --start --daemonize --fail -v
 ExecStop=/usr/bin/pulseaudio --kill
 Restart=always
 RestartSec=1
