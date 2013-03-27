@@ -1,3 +1,4 @@
 [Unit]
 Description=Set session environment variables
+Requires=dbus.socket
 IgnoreOnIsolate=true
