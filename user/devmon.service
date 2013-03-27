@@ -1,0 +1,11 @@
+[Unit]
+Description=Device auto-mounting script
+Documentation=http://igurublog.wordpress.com/downloads/script-devmon/
+
+[Service]
+Type=simple
+EnvironmentFile=/etc/conf.d/devmon
+ExecStart=/usr/bin/devmon $ARGS 
+
+[Install]
+WantedBy=default.target
