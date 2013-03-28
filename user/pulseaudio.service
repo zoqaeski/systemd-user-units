@@ -1,5 +1,6 @@
 [Unit]
 Description=PulseAudio Sound System
+Documentation=man:pulseaudio(1)
 Before=sound.target
 Requires=dbus.socket
 

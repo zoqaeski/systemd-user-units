@@ -1,5 +1,6 @@
 [Unit]
 Description=X resource setting
+Documentation=man:xrdb(1)
 
 [Service]
 Type=oneshot

@@ -1,5 +1,6 @@
 [Unit]
 Description=Conky system monitor
+Documentation=man:conky(1)
 
 [Service]
 Type=forking

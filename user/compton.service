@@ -1,6 +1,6 @@
 [Unit]
 Description=Compton X11 compositor
-Conflicts=gnome-session.service
+Documentation=man:compton(1)
 
 [Service]
 Type=forking
