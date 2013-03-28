@@ -70,6 +70,15 @@ they don’t seem to take effect.
 This can be installed as `default.target` so you can start from console straight
 into a terminal multiplexer. 
 
+You could also create a target similar to `xinitrc.target` for services that do
+not depend on X (maybe call it `initrc.target`?), and add a line to your login
+scripts that are run when you log in to console such as `systemd --user
+-unit=initrc.target &`, though you would need to make sure this command is not
+executed when you log into X. I haven’t tested this, but it shouldn’t be
+difficult; I start systemd from my `~/.xinitrc` so it will never be started on
+console. All my non-X services are wanted by `default.target`, so they will
+always be started when `systemd --user` is run without a specified target unit. 
+
 If you wish to try starting your window manager from systemd, you can write a
 unit based on this one:
 
