@@ -1,5 +1,15 @@
+# THIS DOES NOT WORK
 [Unit]
 Description=XDG variable setting
+
+[Service]
+Type=oneshot
+Environment=XDG_CONFIG_FILE=%h/xdg-variables.conf
+EnvironmentFile=%h/xdg-variables.conf
+ExecStart=/bin/sh -c "xargs systemctl --user set-environment < ${XDG_CONFIG_FILE}"
+#ExecStart=/usr/bin/systemctl --user set-environment XDG_CACHE_HOME="%h/.cache"
+#ExecStart=/usr/bin/systemctl --user set-environment XDG_CONFIG_HOME="%h/.config"
+#ExecStart=/usr/bin/systemctl --user set-environment XDG_DATA_HOME="%h/.local/share"
 
 [Install]
 WantedBy=environment.target
