@@ -1,1 +1,12 @@
-/home/robbie/bin/xscreensaver-toggle
+#!/bin/sh
+
+/usr/bin/systemctl --user --quiet is-active xscreensaver.service
+
+if [ $? == 0 ];
+then
+	echo "Stopping xscreenaver…"
+	/usr/bin/systemctl --user stop xscreensaver.service
+else
+	echo "Starting xscreenaver…"
+	/usr/bin/systemctl --user start xscreensaver.service
+fi
