@@ -1,0 +1,12 @@
+[Unit]
+Conflicts=urxvt.service
+Description=urxvt daemon (socket activation)
+Documentation=man:urxvtd(1) man:urxvt(1)
+
+[Socket]
+ListenStream=%h/.urxvt/urxvtd-%H
+SocketMode=0700
+Accept=yes
+
+[Install]
+WantedBy=xinitrc.target

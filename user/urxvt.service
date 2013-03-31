@@ -3,10 +3,11 @@ Description=urxvt daemon
 Documentation=man:urxvtd(1) man:urxvt(1)
 
 [Service]
-Type=forking
-ExecStart=/usr/bin/urxvtd -o -f
+Type=simple
+ExecStart=/usr/bin/urxvtd -o
+KillMode=control-group
 Restart=always
-RestartSec=1
+RestartSec=2
 
 [Install]
 WantedBy=xinitrc.target
