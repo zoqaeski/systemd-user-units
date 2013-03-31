@@ -1,5 +1,7 @@
 [Unit]
 Description=Xfce4 Panel
+Wants=xfconfd.service
+After=xfconfd.service
 
 [Service]
 BusName=org.xfce.Panel

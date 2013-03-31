@@ -1,6 +1,8 @@
 [Unit]
 Description=Xfce4 Power Manager
 Documentation=man:xfce4-power-manager(1) man:xfce4-power-manager-settings(1)
+Wants=xfconfd.service
+After=xfconfd.service
 
 [Service]
 BusName=org.xfce.PowerManager
