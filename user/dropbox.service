@@ -1,9 +1,11 @@
 [Unit]
 Description=Dropbox Network Storage Daemon
-After=xorg.target
+#After=xorg.target
 
 [Service]
-ExecStart=/opt/dropbox/dropboxd
+Type=forking
+ExecStart=/usr/bin/dropbox start
+ExecStop=/usr/bin/dropbox stop
 
 [Install]
-WantedBy=default.target
+WantedBy=xinitrc.target
