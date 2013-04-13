@@ -7,8 +7,9 @@ IgnoreOnIsolate=true
 [Service]
 Type=forking
 Environment=GPG_ENVFILE=%t/gpg-agent.info
-ExecStart=/usr/bin/gpg-agent --daemon --use-standard-socket --write-env-file ${GPG_ENVFILE}
+ExecStart=/usr/bin/gpg-agent --daemon --enable-ssh-support --use-standard-socket --write-env-file ${GPG_ENVFILE}
 ExecStartPost=/bin/sh -c "xargs systemctl --user set-environment < ${GPG_ENVFILE}"
+ExecStopPost=/bin/rm ${GPG_ENVFILE}
 Restart=on-abort
 
 [Install]

@@ -7,10 +7,12 @@ IgnoreOnIsolate=true
 [Service]
 Type=forking
 Environment=SSH_AUTH_SOCK=%t/ssh-agent.socket
-PIDFile=%t/ssh-agent.pid
+#PIDFile=%t/ssh-agent.pid
 ExecStart=/usr/bin/ssh-agent -a $SSH_AUTH_SOCK
 ExecStartPost=/usr/bin/systemctl --user set-environment SSH_AUTH_SOCK=${SSH_AUTH_SOCK}
 ExecStartPost=/bin/sh -c "ps x -o pid,comm|grep ssh-agent|cut -d' ' -f1 > %t/ssh-agent.pid"
+#ExecStop=/usr/bin/ssh-agent -k
+ExecStopPost=/bin/rm ${SSH_AUTH_SOCK}
 
 [Install]
 WantedBy=default.target
