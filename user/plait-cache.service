@@ -1,0 +1,11 @@
+[Unit]
+Description=Rebuild music cache for plait
+Documentation=http://stephenjungels.com/jungels.net/projects/plait/readme.html
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/plait --cache
+
+[Install]
+WantedBy=default.target
+
