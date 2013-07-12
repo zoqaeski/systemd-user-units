@@ -2,6 +2,7 @@
 Description=Xfce4 Configuration Service
 
 [Service]
+Type=dbus
 BusName=org.xfce.Xfconf
 ExecStart=/usr/lib/xfce4/xfconf/xfconfd
 

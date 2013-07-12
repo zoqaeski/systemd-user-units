@@ -1,13 +1,15 @@
 [Unit]
 Description=Screensaver
 Documentation=man:xscreensaver man:xscreensaver-command man:xscreensaver-demo
+Conflicts=cinnamon-screensaver.service
 
 [Service]
-Type=simple
+Type=forking
 ExecStartPre=/usr/bin/xscreensaver-command -exit
 ExecStart=/usr/bin/xscreensaver -no-splash
 ExecStop=/usr/bin/xscreensaver-command -exit
 
 [Install]
 WantedBy=xinitrc.target
+Alias=screensaver.service
 

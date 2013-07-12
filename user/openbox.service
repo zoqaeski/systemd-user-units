@@ -2,12 +2,12 @@
 Description=Openbox
 Wants=compton.service
 Conflicts=gnome-session.service
-After=xorg.target
 After=environment.target
-Requires=xorg.target
+After=xinitrc.target
+Wants=xinitrc.target
 
 [Service]
-ExecStart=/usr/bin/openbox
+ExecStart=/usr/bin/openbox-session
 ExecReload=/usr/bin/openbox --reload
 ExecStop=/usr/bin/openbox --exit
 
@@ -17,3 +17,4 @@ RestartSec=1
 
 [Install]
 WantedBy=wm.target
+Alias=default.target
