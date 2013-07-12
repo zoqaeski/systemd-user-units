@@ -1,0 +1,9 @@
+[Unit]
+Description=Cinnamon systemd units
+After=environment.target
+#Wants=wm.target
+Wants=environment.target
+Wants=multiplexer.target
+
+[Install]
+Alias=default.target

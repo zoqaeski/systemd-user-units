@@ -1,0 +1,15 @@
+[Unit]
+Description=Screensaver
+Documentation=man:cinnamon-screensaver man:cinnamon-screensaver-command
+Conflicts=xscreensaver.service
+
+[Service]
+Type=simple
+ExecStartPre=/usr/bin/cinnamon-screensaver-command --exit
+ExecStart=/usr/bin/cinnamon-screensaver --no-daemon
+ExecStop=/usr/bin/cinnamon-screensaver-command --exit
+
+[Install]
+WantedBy=xinitrc.target
+Alias=screensaver.service
+
