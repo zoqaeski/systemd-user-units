@@ -1,0 +1,15 @@
+[Unit]
+Description=Suspend Pidgin
+Before=sleep.target
+StopWhenUnneeded=yes
+
+[Service]
+Type=oneshot
+User=robbie
+RemainAfterExit=yes
+#Environment=DISPLAY=:0
+ExecStart=-/usr/bin/purple-remote setstatus?status=offline
+ExecStop=-/usr/bin/purple-remote setstatus?status=available
+
+[Install]
+WantedBy=sleep.target

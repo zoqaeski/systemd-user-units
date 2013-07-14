@@ -1,0 +1,11 @@
+[Unit]
+Description=Tracker file search utilities
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/tracker-control -s
+ExecStop=/usr/bin/tracker-control -t
+
+[Install]
+WantedBy=default.target
