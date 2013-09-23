@@ -4,7 +4,7 @@ Documentation=man:xrdb(1)
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/xrdb -merge %h/.Xresources
+ExecStart=/usr/bin/xrdb -merge /home/%u/.Xresources
 
 [Install]
 WantedBy=xinitrc.target

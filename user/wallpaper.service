@@ -3,9 +3,13 @@ Description=Wallpaper
 Documentation=man:feh(1)
 
 [Service]
-ExecStart=/usr/bin/feh --no-fehbg --image-bg black $BG_TYPE "$CURRENT_WALLPAPER"
-WorkingDirectory=/./%h/wallpapers
-EnvironmentFile=/./%h/.config/fehbg.conf
+Type=oneshot
+RemainAfterExit=true
+; I need to figure out how to translate ~/.fehbg to variables
+;ExecStartPre=/bin/true
+ExecStart=/usr/bin/feh $FEHBG
+WorkingDirectory=/home/robbie/wallpapers
+EnvironmentFile=/home/robbie/.config/fehbg.conf
 
 [Install]
 WantedBy=xinitrc.target

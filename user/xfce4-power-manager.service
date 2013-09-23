@@ -7,6 +7,7 @@ After=xfconfd.service
 [Service]
 BusName=org.xfce.PowerManager
 ExecStart=/usr/bin/xfce4-power-manager --no-daemon
+ExecStop=/usr/bin/xfce4-power-manager --quit
 
 [Install]
 WantedBy=xinitrc.target
