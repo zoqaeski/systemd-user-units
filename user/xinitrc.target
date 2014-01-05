@@ -1,9 +1,8 @@
 [Unit]
 Description=Xinitrc Stuff
 After=environment.target
-#Wants=wm.target
-Wants=environment.target
 Wants=multiplexer.target
+#Wants=xfsettingsd.service
 
 [Install]
 Alias=default.target

@@ -1,3 +1,12 @@
+# UPDATE
+
+As of systemd-206 and higher, most of this fails to work as expected due to how
+loginctl creates user slices: user services run outside of the session, so NO
+session data is available to them.
+
+I’ll keep these documents and files here, but I personally am not using systemd
+to control my session anymore.
+
 # Using `systemd --user`
 
 systemd is useful for system initialization, but it it also useful from a user

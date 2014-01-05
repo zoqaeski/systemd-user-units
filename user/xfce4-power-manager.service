@@ -5,6 +5,7 @@ Wants=xfconfd.service
 After=xfconfd.service
 
 [Service]
+Type=dbus
 BusName=org.xfce.PowerManager
 ExecStart=/usr/bin/xfce4-power-manager --no-daemon
 ExecStop=/usr/bin/xfce4-power-manager --quit

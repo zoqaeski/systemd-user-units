@@ -1,8 +1,7 @@
 [Unit]
 Description=Xfce4 Panel
-Wants=xfconfd.service
 After=xfconfd.service
-#After=pulseaudio.service
+After=pulseaudio.service
 
 [Service]
 Type=dbus

@@ -1,0 +1,11 @@
+[Unit]
+Description=LXPolKit
+After=polkit.service
+
+[Service]
+Type=forking
+ExecStart=/usr/lib/lxpolkit/lxpolkit
+Restart=always
+
+[Install]
+WantedBy=environment.target
